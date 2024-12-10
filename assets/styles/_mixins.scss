@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+@mixin primary-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: $color-title-text;
+  line-height: 16px;
+}
+
+@mixin logo-text {
+  font-size: 24px;
+  font-weight: 900;
+  color: $color-logo-text;
+  line-height: 26px;
+}
