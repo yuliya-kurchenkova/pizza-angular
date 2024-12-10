@@ -1,0 +1,21 @@
+<header class="header">
+  <div class="header-logo">
+    <img src="assets/images/main/logo-small.png" alt="Логотип пиццерии"/>
+    <span class="header-logo__text">Pizza <br/> cheff</span>
+  </div>
+  <nav class="header-nav">
+    <ul class="header-nav__list">
+      @for(item of menuItems; track item.label) {
+        <li class="header-nav__item">
+          <a 
+            [routerLink]="item.link"
+            routerLinkActive="active"
+            class="header-nav__item-link"
+            >
+            {{item.label}}
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+</header>
