@@ -1,0 +1,43 @@
+.landing-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 232px 0 104px;
+}
+
+.landing-section {
+  &__content {
+    display: grid;
+    grid-template-columns: 620px 1fr;
+    grid-gap: 62px;
+
+    &-img {
+      align-self: end;
+      width: 520px;
+      height: 342px;
+      background-image: url(../../../../public/assets/images/main/pizza_big.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+ }
+}
+
+.recommendation-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 43px 64px;
+
+  &__item { 
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-gap: 17px;
+
+    &-img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

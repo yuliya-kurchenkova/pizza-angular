@@ -1,0 +1,28 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+.base-subtitle {
+  @include subtitle-text;
+}
+
+.base-decs {
+  @include primary-text;
+}
+
+.base-title-dark {
+  @include title-text;
+  color: $color-desc;
+}
+
+.base-title-brighter {
+  @include title-text;
+  color: $color-subtitle-text;
+}
+
+.p-bottom-9 {
+  padding-bottom: 9px;
+}
+
+.p-bottom-59 {
+  padding-bottom: 59px;
+}

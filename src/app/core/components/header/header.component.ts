@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { IMenuHeader } from '../../../shared/interfaces/common.interface';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  public menuItems = [
+  public menuItems: IMenuHeader[] = [
     {
       label: 'Пиццы',
       link: '/pizzas'

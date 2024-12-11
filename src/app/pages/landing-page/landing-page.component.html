@@ -1,0 +1,25 @@
+<main class="landing-wrapper">
+  <section class="landing-section">
+    <div class="landing-section__content">
+      <div class="landing-section__content-box">
+        <h1 class="p-bottom-59">
+          <span class="base-title-dark">Самая вкусная пицца в мире</span><br>
+          <span class="base-title-brighter">только в Pizza Cheff</span>
+        </h1>
+        <div class="recommendation-inner">
+          @for(item of infoAboutCompany; track item.title) {
+            <div class="recommendation-inner__item">
+              <img src="{{item.imageUrl}}" class="recommendation-inner__item-img"/>
+              <div>
+                <p class="base-subtitle p-bottom-9">{{item.title | uppercase}}</p>
+                <p class="base-decs">{{item.description}}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+      <div class="landing-section__content-img"></div>
+    </div>
+    <div></div>
+  </section>
+</main>
