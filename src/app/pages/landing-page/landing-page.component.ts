@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
-import { ICommonInfoAboutCompany } from '../../shared/interfaces/common.interface';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ICommonInfoAboutCompany, IFormOrder } from '../../shared/interfaces/common.interface';
 import { UpperCasePipe } from '@angular/common';
+import { ButtonComponent } from "../../core/components/button/button.component";
+import { InputComponent } from "../../core/components/input/input.component";
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PopupComponent } from '../../core/components/popup/popup.component';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [UpperCasePipe],
+  imports: [UpperCasePipe, ButtonComponent, InputComponent, ReactiveFormsModule, PopupComponent],
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss'
+  styleUrl: './landing-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingPageComponent {
   public infoAboutCompany: ICommonInfoAboutCompany[] = [
@@ -31,5 +36,39 @@ export class LandingPageComponent {
       description: 'Мы используем рецепты от мировых лидеров в приготовлении пиццы'
     }
   ];
+
+  public showSuccessPopup: boolean = false;
+
+  public form: FormGroup = new FormGroup({
+    name: new FormControl<string>('', [Validators.required, Validators.minLength(2)]),
+    address: new FormControl<string>('', Validators.required),
+    phone: new FormControl<string>('', Validators.required),
+  })
+
+  public getControl(name: string): FormControl {
+    return this.form.get(name) as FormControl;
+  }
+  
+  public onSubmit(): void {
+    if (this.form.valid) {
+      this.mockRequest(this.form.getRawValue())
+      .then(() => {
+        this.showSuccessPopup = true;
+        this.form.reset();
+      });
+    }
+  }
+
+  public closePopup() {
+    this.showSuccessPopup = false;
+  }
+
+  private mockRequest(body: IFormOrder): Promise<void> {
+    return new Promise<void>((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 500);
+    });
+  }
 
 }

@@ -1,0 +1,8 @@
+<div class="popup" *ngIf="visible" [class.visible]="visible">
+  <div class="popup-content">
+    <div class="popup-title">
+      <h2>{{ title }}</h2>
+      <button class="close-button" (click)="close()">x</button>
+    </div>
+  </div>
+</div>

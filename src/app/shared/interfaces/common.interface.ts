@@ -8,3 +8,9 @@ export interface ICommonInfoAboutCompany {
   title: string;
   description: string;
 }
+
+export interface IFormOrder {
+  name: string;
+  address: string;
+  phone: string;
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IMenuHeader } from '../../../shared/interfaces/common.interface';
 
@@ -6,7 +6,8 @@ import { IMenuHeader } from '../../../shared/interfaces/common.interface';
   selector: 'app-header',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
   public menuItems: IMenuHeader[] = [

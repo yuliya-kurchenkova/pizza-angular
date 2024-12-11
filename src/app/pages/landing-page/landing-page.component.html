@@ -1,11 +1,10 @@
 <main class="landing-wrapper">
-  <section class="landing-section">
-    <div class="landing-section__content">
-      <div class="landing-section__content-box">
-        <h1 class="p-bottom-59">
-          <span class="base-title-dark">Самая вкусная пицца в мире</span><br>
-          <span class="base-title-brighter">только в Pizza Cheff</span>
-        </h1>
+
+  <section class="promo-section p-bottom-158">
+    <h1 class="base-title-dark">Самая вкусная пицца в мире</h1>
+    <div class="promo-section__content">
+      <div class="promo-section__content-box">
+        <p class="base-title-brighter p-bottom-59">только в Pizza Cheff</p>
         <div class="recommendation-inner">
           @for(item of infoAboutCompany; track item.title) {
             <div class="recommendation-inner__item">
@@ -18,8 +17,68 @@
           }
         </div>
       </div>
-      <div class="landing-section__content-img"></div>
+      <div class="promo-section__content-img"></div>
     </div>
-    <div></div>
+    <div class="w-226">
+      <app-button 
+        type="button" 
+        label="Выбрать пиццу"
+      >
+    </app-button>
+    </div>
   </section>
+
+  <!-- Order section -->
+  <section class="order-section">
+    <div>
+      <div class="p-bottom-70">
+        <p class="base-promo-brighter">Хватит думать!</p>
+        <p class="base-promo-dark">Доставим заказ за 30 минут!</p>
+      </div>
+      <div>
+        <p class="base-decs-promo">Мы  гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы опоздаем даже на 1 минуту - вы получаете весь заказ бесплатно и ваучер на скидку на следующий заказ. Мы гордимся нашим сервисом и сделаем всё, чтобы наш клиент был доволен и не остался голодный!</p>
+      </div>
+    </div>
+    <form 
+      [formGroup]="form" 
+      (ngSubmit)="onSubmit()" 
+      class="order-section__form"
+    >
+      <app-input 
+        type="text" 
+        placeholder="Ваше имя" 
+        [control]="getControl('name')"
+      >
+      </app-input>
+      <app-input 
+        type="text" 
+        placeholder="Адрес доставки" 
+        [control]="getControl('address')"
+      >
+      </app-input>
+      <app-input 
+        type="tel" 
+        placeholder="Телефон" 
+        [control]="getControl('phone')"
+        mask="+0 (000) 000-00-00"
+      >
+      </app-input>
+      <app-button 
+        type="submit" 
+        label="Оформить заказ" 
+        class="m-bottom-33"
+        [isDisabled]="form.invalid"
+        >
+      </app-button>
+    </form>
+    <div class="order-section__bg-img"></div>
+  </section>
+
+  <app-popup
+    [visible]="showSuccessPopup"
+    title="Спасибо за заказ!"
+    (closePopup)="closePopup()"
+  >
+  </app-popup>
+  
 </main>

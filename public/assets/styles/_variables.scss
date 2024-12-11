@@ -3,7 +3,14 @@ $color-primary-text: rgba(164, 106, 0.0051, 1);;
 $color-logo-text: rgba(255, 195.9981, 104.24655, 1);
 $color-subtitle-text: rgba(255, 175.0014, 24.0006, 1);
 $color-desc: rgba(185, 145, 80, 1);
+$color-dark: rgba(56, 35, 0, 1);
+$color-white: rgb(255, 255, 255);
+$color-input-text: rgba(203.0004, 167.5095, 109.8591, 1);
+$color-btn-color-disabled: rgb(151 146 133);
+$color-btn-bg-disabled: rgb(239 212 170);
 
 // Variables
 $box-shadow-menu: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+$box-shadow-btn: 0 0 0 2px white, 0 0 0 4px rgba(255, 175.0014, 24.0006, 1);
+$box-shadow-popup: 3px 8px 31px -15px $color-dark;
 

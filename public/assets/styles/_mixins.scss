@@ -1,5 +1,12 @@
 @use "variables" as *;
 
+@mixin subtitle-text {
+  font-size: 12px;
+  font-weight: 800;
+  color: $color-subtitle-text;
+  line-height: 12px;
+}
+
 @mixin primary-text {
   font-size: 16px;
   font-weight: 400;
@@ -7,11 +14,18 @@
   line-height: 16px;
 }
 
-@mixin subtitle-text {
-  font-size: 12px;
-  font-weight: 800;
-  color: $color-subtitle-text;
-  line-height: 12px;
+@mixin decs-promo {
+  font-size: 16px;
+  font-weight: 400;
+  color: $color-desc;
+  line-height: 16px;
+}
+
+@mixin input-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: $color-input-text;
+  line-height: 16px;
 }
 
 @mixin logo-text {
@@ -25,4 +39,10 @@
   font-size: 37px;
   font-weight: 900;
   line-height: 48px;
+}
+
+@mixin promo-text {
+  font-size: 31px;
+  font-weight: 900;
+  line-height: 37px;
 }

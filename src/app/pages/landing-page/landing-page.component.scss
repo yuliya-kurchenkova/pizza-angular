@@ -6,7 +6,7 @@
   padding: 232px 0 104px;
 }
 
-.landing-section {
+.promo-section {
   &__content {
     display: grid;
     grid-template-columns: 620px 1fr;
@@ -39,5 +39,32 @@
       width: 60px;
       height: 60px;
     }
+  }
+}
+
+// Order section
+.order-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: 389px 332px;
+  grid-gap: 128px;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    align-self: end;
+  }
+
+  &__bg-img {
+    position: absolute;
+    bottom: 2%;
+    left: 74%;
+    width: 410px;
+    height: 454px;
+    background-image: url(../../../../public/assets/images/main/slice-of-pizza.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
