@@ -14,3 +14,9 @@ export interface IFormOrder {
   address: string;
   phone: string;
 }
+
+export interface IProduct {
+  name: string;
+  image: string;
+  description: string;
+}

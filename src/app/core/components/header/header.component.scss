@@ -12,7 +12,7 @@
   z-index: 1000;
   gap: 250px;
   width: 100%;
-  padding: 17px 0;
+  padding: 17px 20px;
   box-shadow: $box-shadow-menu;
   background: $color-white;
 
@@ -47,6 +47,105 @@
       &-link {
         @include primary-text;
       }
+
+      &-link:hover {
+        color: $color-title-session;
+        transition: all 0.175s ease-in-out;
+      }
     }
+  }
+}
+
+.header-toggle {
+  display: none;
+  background-color: transparent;
+  border: 1px solid $color-desc;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: $color-desc;
+
+  &.active {
+    color: $color-subtitle-text;
+    border: 1px solid $color-subtitle-text;
+  }
+
+  &:hover {
+    color: $color-subtitle-text;
+    border: 1px solid $color-subtitle-text;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  height: 100%;
+  background-color: $color-white;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  z-index: 100;
+
+  &.open {
+    left: 0;
+  }
+
+  &__nav {
+    padding: 100px 24px;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    @include primary-text;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-title-session;
+      transition: all 0.175s ease-in-out;
+    }
+  }
+}
+
+
+@media (max-width: 965px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  .header-wrapper {
+    justify-content: space-between;
+    gap: 10%;
+  }
+
+  .header-logo {
+    &__img {
+      width: 52px;
+      height: 52px;
+    }
+
+    &__text {
+      font-size: 17px;
+      line-height: 17px;
+    }
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-toggle {
+    display: block;
+    font-size: 19px;
   }
 }

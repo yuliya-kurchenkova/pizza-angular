@@ -1,43 +1,34 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ICommonInfoAboutCompany, IFormOrder } from '../../shared/interfaces/common.interface';
-import { UpperCasePipe } from '@angular/common';
+import { AsyncPipe, UpperCasePipe } from '@angular/common';
 import { ButtonComponent } from "../../core/components/button/button.component";
 import { InputComponent } from "../../core/components/input/input.component";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PopupComponent } from '../../core/components/popup/popup.component';
+import { infoAboutCompany } from '../../shared/consts';
+import { ProductCardComponent } from "../../core/components/product-card/product-card.component";
+import { ProductService } from '../../shared/services/product/product.service';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [UpperCasePipe, ButtonComponent, InputComponent, ReactiveFormsModule, PopupComponent],
+  imports: [
+    UpperCasePipe, 
+    ButtonComponent, 
+    InputComponent, 
+    ReactiveFormsModule, 
+    PopupComponent, 
+    ProductCardComponent,
+    AsyncPipe
+  ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingPageComponent {
-  public infoAboutCompany: ICommonInfoAboutCompany[] = [
-    {
-      imageUrl: 'assets/images/main/icons/hop.png',
-      title: 'Лучшее тесто',
-      description: 'Мы создаем тесто только из отборной итальянской муки наивысшего качества'
-    },
-    {
-      imageUrl: 'assets/images/main/icons/kitchen-pack.png',
-      title: 'Лучшие повара',
-      description: 'Пиццы готовят самые профессиональные итальянские повара'
-    },
-    {
-      imageUrl: 'assets/images/main/icons/seo-and-web.png',
-      title: 'Гарантия качества',
-      description: 'Наша пиццерия получила множество наград и признаний по всему миру'
-    },
-    {
-      imageUrl: 'assets/images/main/icons/holidays.png',
-      title: 'Отборные рецепты',
-      description: 'Мы используем рецепты от мировых лидеров в приготовлении пиццы'
-    }
-  ];
-
   public showSuccessPopup: boolean = false;
+  public infoAboutCompany: ICommonInfoAboutCompany[] = infoAboutCompany;
+  public productService = inject(ProductService);
+  public products$ = this.productService.getProducts();
 
   public form: FormGroup = new FormGroup({
     name: new FormControl<string>('', [Validators.required, Validators.minLength(2)]),

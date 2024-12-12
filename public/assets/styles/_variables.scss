@@ -8,9 +8,14 @@ $color-white: rgb(255, 255, 255);
 $color-input-text: rgba(203.0004, 167.5095, 109.8591, 1);
 $color-btn-color-disabled: rgb(151 146 133);
 $color-btn-bg-disabled: rgb(239 212 170);
+$color-bg-fullscreen: rgb(65 65 65 / 82%);
+$color-title-card: rgba(56, 36, 0, 1);
+$color-desc-card: rgba(23.75835, 25.9998, 25.9998, 1);
+$color-title-session: rgba(189.0009, 151.5006, 92.49615, 1);
 
-// Variables
+// Shadow
 $box-shadow-menu: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
 $box-shadow-btn: 0 0 0 2px white, 0 0 0 4px rgba(255, 175.0014, 24.0006, 1);
 $box-shadow-popup: 3px 8px 31px -15px $color-dark;
+$drop-shadow-card: drop-shadow(0px 3px 8px rgba(152, 152, 152, 0.2));
 

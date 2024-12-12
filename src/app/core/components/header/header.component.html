@@ -1,7 +1,7 @@
 <header class="header">
   <div class="header-wrapper">
     <div class="header-logo">
-      <img src="assets/images/main/logo-small.png" alt="Логотип пиццерии"/>
+      <img src="assets/images/main/logo-small.png" alt="Логотип пиццерии" class="header-logo__img"/>
       <span class="header-logo__text">Pizza <br/> cheff</span>
     </div>
     <nav class="header-nav">
@@ -19,5 +19,26 @@
         }
       </ul>
     </nav>
+    <button class="header-toggle" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+      Меню
+    </button>
   </div>
 </header>
+
+<div class="mobile-menu" [class.open]="isMobileMenuOpen">
+  <nav class="mobile-menu__nav">
+    <ul class="mobile-menu__list">
+      @for(item of menuItems; track item.label) {
+        <li class="mobile-menu__item">
+          <a
+            [routerLink]="item.link"
+            routerLinkActive="active"
+            class="mobile-menu__link"
+          >
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+</div>

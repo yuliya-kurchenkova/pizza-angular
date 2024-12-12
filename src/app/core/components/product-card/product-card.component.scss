@@ -1,0 +1,53 @@
+@use '../../../../../public/assets/styles/variables.scss' as *; 
+@use '../../../../../public/assets/styles/mixins.scss' as *; 
+
+.product-card {
+  display: flex;
+  width: 284px;
+  height: 356px;
+  padding: 28px 20px 15px;
+  filter: $drop-shadow-card;
+  background: $color-white;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    &-img {
+      width: 203px;
+      padding-bottom: 24px;
+      cursor: pointer;
+    }
+
+    &-title {
+      @include title-card;
+      padding-bottom: 12px;
+    }
+
+    &-text {
+      @include desc-card;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
+}
+
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: $color-bg-fullscreen;
+  z-index: 999;
+}
+
+.fullscreen-image {
+  width: 400px;
+}

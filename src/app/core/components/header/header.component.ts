@@ -28,4 +28,10 @@ export class HeaderComponent {
       link: '/contacts'
     },
   ]
+
+  public isMobileMenuOpen: boolean = false;
+
+  public toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 }

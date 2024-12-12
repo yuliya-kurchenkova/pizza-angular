@@ -1,0 +1,23 @@
+<div class="product-card">
+  <div class="product-card__item">
+    <img 
+      [src]="product.image" 
+      [alt]="product.name" 
+      class="product-card__item-img"
+      (click)="openImage(product.image)"
+      >
+    <h4 class="product-card__item-title">{{product.name}}</h4>
+    <div class="product-card__item-text">{{product.description}}</div>
+    <app-button 
+      label="В корзину" 
+      type="button" 
+      class="w-100"
+      padding="15px 0"  
+    >
+    </app-button>
+  </div>
+</div>
+
+<div *ngIf="selectedImage" class="fullscreen-overlay" (click)="closeImage()">
+  <img [src]="selectedImage" class="fullscreen-image">
+</div>

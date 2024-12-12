@@ -28,7 +28,15 @@
     </div>
   </section>
 
-  <!-- Order section -->
+   <section class="pizza-section p-bottom-176">
+    <h2 class="pizza-section__title">Выберите свою любимую пиццу</h2>
+    <div class="pizza-section__container">
+      @for (product of products$ | async; track product.name) {
+        <app-product-card [product]="product"></app-product-card>
+      }
+    </div>
+   </section>
+
   <section class="order-section">
     <div>
       <div class="p-bottom-70">

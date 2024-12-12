@@ -1,9 +1,11 @@
+@use '../../../../public/assets/styles/mixins.scss' as *; 
+
 .landing-wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 232px 0 104px;
+  padding: 232px 20px 104px;
 }
 
 .promo-section {
@@ -42,7 +44,20 @@
   }
 }
 
-// Order section
+.pizza-section {
+  &__title {
+    @include title-session;
+    padding-bottom: 59px;
+    text-align: center;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 21px;
+  }
+}
+
 .order-section {
   position: relative;
   display: grid;
@@ -66,5 +81,84 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+  }
+}
+
+@media (max-width: 1400px) {
+  .order-section {
+    &__bg-img {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .promo-section {
+    &__content {
+      &-box {
+        margin-bottom: 40px;
+      }
+
+      &-img {
+        width: 420px;
+        height: 276px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .promo-section {
+    &__content {
+      &-img {
+        width: 320px;
+        height: 210px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .promo-section {
+    &__content {
+      &-img {
+        width: 240px;
+        height: 158px;
+      }
+    }
+  }
+}
+
+@media (max-width: 965px) {
+  .landing-wrapper {
+    padding: 140px 20px 104px;
+  }
+
+  .promo-section {
+    &__content {
+      display: block;
+
+      &-img {
+        display: none;
+      }
+    }
+  }
+
+  .order-section {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10%;
+  }
+}
+
+@media (max-width: 576px) {
+  .recommendation-inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 15px;
+  }
+
+  .order-section {
+    grid-template-columns: 1fr;
+    grid-gap: 10%;
   }
 }
