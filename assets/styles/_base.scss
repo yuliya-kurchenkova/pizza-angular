@@ -1,0 +1,135 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+.base-subtitle {
+  @include subtitle-text;
+}
+
+.base-decs {
+  @include primary-text;
+}
+
+.base-decs-promo {
+  @include decs-promo;
+}
+
+.base-title-dark {
+  @include title-text;
+  color: $color-desc;
+}
+
+.base-title-brighter {
+  @include title-text;
+  color: $color-subtitle-text;
+}
+
+.base-promo-dark {
+  @include promo-text;
+  color: $color-desc;
+}
+
+.base-promo-brighter {
+  @include promo-text;
+  color: $color-subtitle-text;
+}
+
+.base-btn {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 800;
+  color: $color-dark;
+  background: $color-subtitle-text;
+  transition: .2s linear;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: $box-shadow-btn;
+  }
+
+  &:disabled {
+    color: $color-btn-color-disabled;
+    background: $color-btn-bg-disabled;
+    cursor: not-allowed;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+.base-input {
+  outline: none;
+  width: 100%;
+  height: 62px;
+  padding: 25px;
+  border: 1px solid $color-desc;
+  background: transparent;
+  color: $color-dark;
+  @include input-text;
+  color: $color-dark;
+
+  &::placeholder {
+    @include input-text;
+  }
+
+  &:hover {
+    border: 1px solid $color-logo-text;
+    transition: all 0.175s ease-in-out;
+  }
+
+  &:disabled {
+    background: $color-logo-text;
+  }
+}
+
+.w-226 {
+  width: 226px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.p-bottom-9 {
+  padding-bottom: 9px;
+}
+
+.p-bottom-59 {
+  padding-bottom: 59px;
+}
+
+.m-bottom-33 {
+  margin-bottom: 33px;
+}
+
+.p-bottom-70 {
+  padding-bottom: 70px;
+}
+
+.p-bottom-158 {
+  padding-bottom: 158px;
+}
+
+.p-bottom-176 {
+  padding-bottom: 176px;
+}
+
+@media (max-width: 1050px) {
+  .base-title-dark, 
+  .base-title-brighter {
+    font-size: 28px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .p-bottom-59 {
+    padding-bottom: 35px;
+  }
+
+  .base-title-dark, 
+  .base-title-brighter {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
